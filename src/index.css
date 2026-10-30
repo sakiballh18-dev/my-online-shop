@@ -1,0 +1,21 @@
+@import "tailwindcss";
+@theme {
+  --font-display: "Instrument Serif", Georgia, serif;
+  --font-sans: "Hanken Grotesk", system-ui, sans-serif;
+  --color-porcelain: #F3F4F1;
+  --color-ink: #1B1F1D;
+  --color-moss: #3F4A42;
+  --color-brass: #B08D57;
+  --color-mist: #DADFD7;
+}
+body { background: var(--color-porcelain); color: var(--color-ink); font-family: var(--font-sans); -webkit-font-smoothing: antialiased; }
+@keyframes rise { from { opacity: 0; transform: translateY(28px); } to { opacity: 1; transform: none; } }
+.rise { animation: rise 1s cubic-bezier(.2,.7,.2,1) both; }
+:focus-visible { outline: 2px solid var(--color-brass); outline-offset: 3px; }
+.field { width: 100%; background: transparent; border-bottom: 1px solid color-mix(in srgb, var(--color-ink) 25%, transparent); padding: .75rem 0; outline: none; transition: border-color .2s; }
+.field:focus { border-color: var(--color-ink); }
+.btn { display: inline-flex; justify-content: center; align-items: center; background: var(--color-ink); color: var(--color-porcelain); padding: .95rem 2rem; font-size: .9rem; letter-spacing: .02em; transition: background .3s; }
+.btn:hover { background: var(--color-moss); }
+.btn-line { background: transparent; color: var(--color-ink); border: 1px solid var(--color-ink); }
+.btn-line:hover { background: var(--color-ink); color: var(--color-porcelain); }
+@media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
